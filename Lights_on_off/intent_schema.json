@@ -1,0 +1,83 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "automate home",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": [
+                        "i need help",
+                        "help"
+                    ]
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": [
+                        "shut it down",
+                        "cancel",
+                        "stop",
+                        "stop it"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "switchingLights",
+                    "slots": [
+                        {
+                            "name": "key",
+                            "type": "keyValues"
+                        }
+                    ],
+                    "samples": [
+                        "turn it {key}",
+                        "put {key} that light",
+                        "switch {key} the light",
+                        "Turn {key} the light"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NoIntent",
+                    "samples": []
+                },
+                {
+                    "name": "describeIntent",
+                    "slots": [],
+                    "samples": [
+                        "tell me about it",
+                        "tell me about automate home",
+                        "what is it",
+                        "what is automate home "
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "keyValues",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "off"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "on"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
