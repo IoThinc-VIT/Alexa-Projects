@@ -1,0 +1,196 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "my wheels",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": [
+                        "i don't understand this",
+                        "i need help",
+                        "help"
+                    ]
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": [
+                        "cancel",
+                        "exit",
+                        "stop",
+                        "stop it"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "aboutIntent",
+                    "slots": [
+                        {
+                            "name": "aboutVals",
+                            "type": "aboutType"
+                        }
+                    ],
+                    "samples": [
+                        "what does {aboutVals} do",
+                        "tell me about {aboutVals}",
+                        "what is {aboutVals}"
+                    ]
+                },
+                {
+                    "name": "advantagesIntent",
+                    "slots": [],
+                    "samples": [
+                        "wha are its benefits",
+                        "how is it different"
+                    ]
+                },
+                {
+                    "name": "linearMovementIntent",
+                    "slots": [
+                        {
+                            "name": "direction",
+                            "type": "direction"
+                        },
+                        {
+                            "name": "speedSpeech",
+                            "type": "speedSpeeches"
+                        },
+                        {
+                            "name": "speedType",
+                            "type": "speeds"
+                        }
+                    ],
+                    "samples": [
+                        "go {direction} and {speedSpeech} {speedType}",
+                        "go {direction}",
+                        "move {direction} and {speedSpeech} {speedType}",
+                        "move {direction}",
+                        "acclerate {direction} and {speedSpeech} {speedType}",
+                        "accelerate {direction}"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NoIntent",
+                    "samples": []
+                }
+            ],
+            "types": [
+                {
+                    "name": "aboutType",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "my wheels"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "it"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "direction",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "backwords"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "back"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "front"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "backward"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "forward"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "speedSpeeches",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "set the pace to"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "move at"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "speed"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "set the speed to"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "speeds",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "very fast"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "medium"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "normal "
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fast"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "slow"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "very slow"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
