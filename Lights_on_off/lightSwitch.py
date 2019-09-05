@@ -4,6 +4,10 @@ from flask_ask import Ask, statement, question, session
 
 from lightsTemplate import *
 
+from serial import Serial
+ser = Serial('/dev/ttyACM0',9600,timeout = None)
+
+
 app = Flask(__name__)
 
 ask = Ask(app, "/")
@@ -25,6 +29,7 @@ def launch_skill():
 
 def description():
     about = d["about_the_skill"]
+    ser.write(b'L')
     return question(about)
 
 @ask.intent("switchingLights", convert={'key':str})
@@ -38,6 +43,10 @@ def switch_light(key):
         else:
             lastStatus = key
             response = d["switch_on_off_template"].format(key)
+            if key=="on":
+                ser.write(b'H')
+            elif key == "off":
+                ser.write(b'L')
     else:
         response = d["invalid_switch"]
     return question(response)
@@ -47,11 +56,11 @@ def switch_light(key):
 def switch_help():
     response = d["help_template"]
     return question(response)
-
 @ask.intent("AMAZON.StopIntent")
 
 def switch_stop():
     response = d["stop_template"]
+    ser.write(b'L')
     return statement(response)
 
 if __name__ == '__main__':
