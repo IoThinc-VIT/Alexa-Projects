@@ -1,5 +1,5 @@
 int inputByte;
-int ledPin = 13;
+int ledPin = 12;
 
 void setup() {
   Serial.begin(9600);

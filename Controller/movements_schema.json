@@ -1,7 +1,7 @@
 {
     "interactionModel": {
         "languageModel": {
-            "invocationName": "my wheels",
+            "invocationName": "auto wheels",
             "intents": [
                 {
                     "name": "AMAZON.FallbackIntent",
@@ -14,6 +14,7 @@
                 {
                     "name": "AMAZON.HelpIntent",
                     "samples": [
+                        "wheels help",
                         "i don't understand this",
                         "i need help",
                         "help"
@@ -22,8 +23,9 @@
                 {
                     "name": "AMAZON.StopIntent",
                     "samples": [
-                        "cancel",
-                        "exit",
+                        "brake",
+                        "don't move",
+                        "come to rest",
                         "stop",
                         "stop it"
                     ]
@@ -37,7 +39,7 @@
                     "slots": [
                         {
                             "name": "aboutVals",
-                            "type": "aboutType"
+                            "type": "deviceName"
                         }
                     ],
                     "samples": [
@@ -47,145 +49,85 @@
                     ]
                 },
                 {
-                    "name": "advantagesIntent",
-                    "slots": [],
-                    "samples": [
-                        "wha are its benefits",
-                        "how is it different"
-                    ]
+                    "name": "AMAZON.NoIntent",
+                    "samples": []
                 },
                 {
-                    "name": "linearMovementIntent",
+                    "name": "linearMovement",
                     "slots": [
                         {
-                            "name": "direction",
-                            "type": "direction"
-                        },
-                        {
-                            "name": "speedSpeech",
-                            "type": "speedSpeeches"
-                        },
-                        {
-                            "name": "speedType",
-                            "type": "speeds"
+                            "name": "directionL",
+                            "type": "directionName"
                         }
                     ],
                     "samples": [
-                        "go {direction} and {speedSpeech} {speedType}",
-                        "go {direction}",
-                        "move {direction} and {speedSpeech} {speedType}",
-                        "move {direction}",
-                        "acclerate {direction} and {speedSpeech} {speedType}",
-                        "accelerate {direction}"
+                        "go {directionL}",
+                        "move {directionL}"
                     ]
                 },
                 {
-                    "name": "AMAZON.NoIntent",
-                    "samples": []
+                    "name": "sideMovement",
+                    "slots": [
+                        {
+                            "name": "directionS",
+                            "type": "directionName"
+                        }
+                    ],
+                    "samples": [
+                        "move {directionS}",
+                        "turn {directionS}"
+                    ]
                 }
             ],
             "types": [
                 {
-                    "name": "aboutType",
+                    "name": "deviceName",
                     "values": [
-                        {
-                            "name": {
-                                "value": "my wheels"
-                            }
-                        },
                         {
                             "name": {
                                 "value": "it"
                             }
-                        }
-                    ]
-                },
-                {
-                    "name": "direction",
-                    "values": [
+                        },
                         {
                             "name": {
-                                "value": "backwords"
+                                "value": "this device"
                             }
                         },
                         {
                             "name": {
-                                "value": "back"
-                            }
-                        },
-                        {
-                            "name": {
-                                "value": "front"
-                            }
-                        },
-                        {
-                            "name": {
-                                "value": "backward"
-                            }
-                        },
-                        {
-                            "name": {
-                                "value": "forward"
+                                "value": "auto wheels"
                             }
                         }
                     ]
                 },
                 {
-                    "name": "speedSpeeches",
+                    "name": "directionName",
                     "values": [
                         {
                             "name": {
-                                "value": "set the pace to"
+                                "value": "right"
                             }
                         },
                         {
                             "name": {
-                                "value": "move at"
+                                "value": "left"
                             }
                         },
                         {
                             "name": {
-                                "value": "speed"
+                                "value": "backward",
+                                "synonyms": [
+                                    "back"
+                                ]
                             }
                         },
                         {
                             "name": {
-                                "value": "set the speed to"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "name": "speeds",
-                    "values": [
-                        {
-                            "name": {
-                                "value": "very fast"
-                            }
-                        },
-                        {
-                            "name": {
-                                "value": "medium"
-                            }
-                        },
-                        {
-                            "name": {
-                                "value": "normal "
-                            }
-                        },
-                        {
-                            "name": {
-                                "value": "fast"
-                            }
-                        },
-                        {
-                            "name": {
-                                "value": "slow"
-                            }
-                        },
-                        {
-                            "name": {
-                                "value": "very slow"
+                                "value": "forward",
+                                "synonyms": [
+                                    "straight",
+                                    "front"
+                                ]
                             }
                         }
                     ]

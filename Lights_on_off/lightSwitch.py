@@ -5,7 +5,7 @@ from flask_ask import Ask, statement, question, session
 from lightsTemplate import *
 
 from serial import Serial
-ser = Serial('/dev/ttyACM0',9600,timeout = None)
+#ser = Serial('/dev/ttyACM0',9600,timeout = None)
 
 
 app = Flask(__name__)
@@ -29,7 +29,7 @@ def launch_skill():
 
 def description():
     about = d["about_the_skill"]
-    ser.write(b'L')
+    #ser.write(b'L')
     return question(about)
 
 @ask.intent("switchingLights", convert={'key':str})
@@ -44,7 +44,7 @@ def switch_light(key):
             lastStatus = key
             response = d["switch_on_off_template"].format(key)
             if key=="on":
-                ser.write(b'H')
+            	ser.write(b'H')
             elif key == "off":
                 ser.write(b'L')
     else:
@@ -60,7 +60,7 @@ def switch_help():
 
 def switch_stop():
     response = d["stop_template"]
-    ser.write(b'L')
+    # ser.write(b'L')
     return statement(response)
 
 if __name__ == '__main__':
