@@ -37,7 +37,7 @@ def frontBackMovement(directionL):
 def leftRightMovement(directionS):
     if directionS == "left":
         response = query["sideMovementLeft"]
-    elif directionS == "backward":
+    elif directionS == "right":
         response = query["sideMovementRight"]
     else:
         response = query["invalidMovement"]
